@@ -1,0 +1,370 @@
+# Description: Carts API documentation
+
+paths:
+  /api/carts:
+    post:
+      summary: Create a new empty cart
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Cart created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/addCart"
+        "400":
+          description: Bad request.
+    get:
+      summary: Get all carts
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: All carts returned successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/getCarts"
+        "400":
+          description: Bad request.
+  /api/carts/{cid}:
+    get:
+      sumamry: Get a cart by id
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Cart returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getCarts"
+        "400":
+          description: Validation Error.
+    put:
+      summary: Update a cart by id
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      requestBody:
+        description: Cart object that needs to be updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/updateCartProductsBody"
+      responses:
+        "200":
+          description: Cart updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/updateCartProducts"
+        "400":
+          description: Validation Error.
+    delete:
+      summary: Delete a cart by id
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Cart deleted successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/deleteCart"
+        "400":
+          description: Validation Error.
+  /api/carts/{cid}/products/{pid}:
+    post:
+      summary: Add a product to a cart
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product added to cart successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/addProductToCart"
+        "400":
+          description: Validation Error.
+    put:
+      summary: Update a product in a cart
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: Product id
+          schema:
+            type: string
+      requestBody:
+        description: Cart object that needs to be updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/updateCartProduct"
+      responses:
+        "200":
+          description: Product updated in cart successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/updateCart"
+        "400":
+          description: Validation Error.
+    delete:
+      summary: Delete a product from a cart
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product deleted from cart successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/deleteCartProduct"
+        "400":
+          description: Validation Error.
+
+  /api/carts/{cid}/purchase:
+    post:
+      summary: Purchase a cart and generate an order
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Cart id
+      responses:
+        "200":
+          description: Cart purchased successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/purchaseCart"
+        "400":
+          description: Validation Error.
+
+# Components
+
+components:
+  schemas:
+    addCart:
+      type: object
+      example:
+        status: 200
+        message: Cart created successfully.
+        payload:
+          products: []
+          _id: 64dbfad562cd5340ba21adb7
+          __v: 0
+
+    addProductToCart:
+      type: object
+      example:
+        status: 200
+        message: Product added to cart successfully.
+        payload:
+          products:
+            _id: 649346bcbfe1a2b704318cf7
+            title: Cintas. 1/kg
+            description: Spaghetti en cintas al huevo.
+            category: pastas
+            price: 700
+            thumbnail: ruta_thumbnail_3
+            code: SP003
+            stock: 0
+            __v: 0
+          quantity: 1
+          _id: 64dbfad562cd5340ba21adb7
+          __v: 0
+
+    getCarts:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Auto-generated mongodb id
+          objects:
+            tyope: object
+            description: Product object
+            products:
+              type: ObjectId
+              description: Auto-generated mongodb id
+            quantity:
+              type: number
+              description: Quantity of product in cart
+            _id:
+              type: ObjectId
+              description: Auto-generated mongodb id
+      example:
+        status: 200
+        message: "Cart Found"
+        payload:
+          product:
+            _id: 649346bcbfe1a2b704318cf7
+            title: Cintas. 1/kg
+            description: Spaghetti en cintas al huevo.
+            category: pastas
+            price: 700
+            thumbnail: ruta_thumbnail_3
+            code: SP003
+            stock: 0
+            __v: 0
+          quantity: 1
+          _id: 64af425c5abd8e5175889ddb
+
+    updateCart:
+      type: object
+      example:
+        status: 200
+        message: Cart updated successfully.
+        payload:
+          acknowledged: true
+          modifiedCount: 1
+          upsertedId: null
+          upsertedCount: 0
+          matchedCount: 1
+
+    updateCartProducts:
+      type: object
+      example:
+        status: 200
+        message: Cart updated successfully.
+        payload:
+          acknowledged: true
+          modifiedCount: 1
+          upsertedId: null
+          upsertedCount: 0
+          matchedCount: 1
+
+    deleteCart:
+      type: object
+      example:
+        status: 200
+        message: Cart deleted successfully.
+        payload:
+          acknowledged: true
+          deletedCount: 1
+
+    deleteCartProduct:
+      type: object
+      example:
+        status: 200
+        message: Product deleted from cart successfully.
+        payload:
+          acknowledged: true
+          modifiedCount: 1
+          upsertedId: null
+          upsertedCount: 0
+          matchedCount: 1
+
+    purchaseCart:
+      type: object
+      example:
+        status: 200
+        message: Cart purchased successfully.
+        payload:
+          acknowledged: true
+          deletedCount: 1
+
+  requestBodies:
+    updateCartProduct:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              quantity:
+                type: number
+                description: Quantity of product in cart
+              _id:
+                type: ObjectId
+                description: Auto-generated mongodb id
+            example:
+              quantity: 1
+              _id: 64af425c5abd8e5175889ddb
+    updateCartProductsBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              products:
+                type: array
+                description: Array of products in cart
+                items:
+                  type: object
+                  properties:
+                    quantity:
+                      type: number
+                      description: Quantity of product in cart
+                    _id:
+                      type: ObjectId
+                      description: Auto-generated mongodb id
+            example:
+              products:
+                - quantity: 1
+                  _id: 64af425c5abd8e5175889ddb
+                - quantity: 2
+                  _id: 64af425c5abd8e5175889ddb

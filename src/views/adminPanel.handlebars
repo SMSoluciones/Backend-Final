@@ -1,0 +1,54 @@
+<header>
+    <div>
+        <div>
+            <p>Bienvenido {{user.first_name}}</p>
+        </div>
+        <div>
+            <div>Email: {{user.email}}</div>
+            <div>Role: {{user.role}}</div>
+        </div>
+    </div>
+</header>
+<h1>Administración de Usuarios</h1>
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Email</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Guardar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.name}}</td>
+                    <td>
+                        <select id="idUserRole" aria-label="Default select example">
+                            {{#each ../roles}}
+                                {{#ifEquals this ../this.role}}
+                                    <option selected value="{{../this}}">{{../this}}</option>
+                                {{/ifEquals}}
+                                {{#ifNotEquals this ../this.role}}
+                                    <option value="{{../this}}">{{../this}}</option>
+                                {{/ifNotEquals}}
+                            {{/each}}
+                        </select>
+                    </td>
+                    <td><button onclick="guardarRoleUsuario('{{this.id}}')">GUARDAR</button></td>
+                    <td><button onclick="borrarUsuario('{{this.id}}')">ELIMINAR</button></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div>
+        <a href="/home"><button type="button">Volver a la Tienda</button></a>
+    </div>
+</section>
+<script src="/js/adminPanel.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

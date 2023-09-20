@@ -1,0 +1,44 @@
+<h2>Cart: {{cart._id}}</h2>
+
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each cart.products}}
+                <tr>
+                    <td>{{this.product.title}}</td>
+                    <td>{{this.product.code}}</td>
+                    <td>{{this.product.description}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.product.price}}</td>
+                    <td><button onclick="deleteCartProduct('{{this.product._id}}', '{{../cart._id}}')">Eliminar</button></td>    
+                </tr>
+            {{/each}}
+            <tr>
+                <td></td>
+                <td></td>
+                <td><b>TOTAL</b></td>
+                <td><b><span id="idContadorCarrito">{{cant}}</span></b></td>
+                <td><b><span id="idTotalCarrito">{{total}}</span> $</b></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <button onclick="purchaseCart('{{cart._id}}')" type="button">Finalizar Compra</button>
+    </div>
+    <br>
+    <div>
+        <a href="/home"><button type="button">Volver a la Tienda</button></a>
+    </div>
+</section>
+<script src="/js/purchase.js"></script>

@@ -1,0 +1,61 @@
+* {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: rgb(206, 206, 206);
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.containerLogin section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(196, 196, 196);
+  padding-bottom: 50px;
+  width: 30rem;
+  height: auto;
+  border-radius: 40px;
+}
+
+.containerLogin img {
+  width: 15rem;
+  margin-bottom: 1rem;
+}
+.containerLogin h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.containerLogin input {
+  display: flex;
+  border-style: none;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  height: 2rem;
+  &:hover {
+    transform: scale(1.1, 1.1);
+    transition: transform 0.2s;
+  }
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}

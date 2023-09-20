@@ -1,0 +1,81 @@
+<div class="products-container">
+  <section>
+      <h1>Angelo - Almacén de Pastas</h1>
+          <a href="/realTimeProducts"><button>Administrar Productos</button></a>
+          <a href="/chat"><button>Contactar vía chat</button></a>
+          <a href="/api/users/logout"><button>Cerrar Sesion</button></a>
+          <a href="/profile"><button>Profile</button></a>
+
+<h2>¡Bienvenido {{user.first_name}}! {{user.email}}</h2>
+
+<button><a href="/admin">Administrador de Usuarios.</a></button>
+
+<h2>Productos</h2>
+
+{{! Category Filter}}
+<form action="/home" method="get">
+  <label for="category">Categoría:</label>
+  <select name="category" id="category">
+    <option value="">Todas</option>
+    <option value="pastas">Pastas</option>
+    <option value="salsas">Salsas</option>
+    <option value="tartas">Tartas</option>
+    <option value="empanadas">Empanadas</option>
+  </select>
+  <button type="submit">Filtrar</button>
+</form>
+
+{{! Sorting }}
+<form action="/home" method="get">
+  <label for="sort">Ordenar por precio:</label>
+  <select name="sort" id="sort">
+    <option value="">Ninguno</option>
+    <option value="asc" {{#if currentSort}}selected{{/if}}>Ascendente</option>
+    <option value="desc" {{#if currentSort}}selected{{/if}}>Descendente</option>
+  </select>
+  <button type="submit">Ordenar</button>
+</form>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+    <th>Código</th>
+    <th>Stock</th>
+    <th>Categoría</th>
+  </tr>
+  <tbody>
+    {{#each productsList}}
+      <tr>
+        <td>{{this._id}}</td>
+        <td>{{this.title}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.code}}</td>
+        <td>{{this.stock}}</td>
+        <td>{{this.category}}</td>
+        <td ><a href="/product/{{this._id}}"><button id="btnAgregar">Agregar al Carrito</button></a></td>
+      </tr>
+    {{/each}}
+
+
+    {{! Paginate }}
+
+    {{#if hasPrevPage}}
+      <a href="/home/?category={{category}}&sort={{currentSort}}&page={{prevPage}}"><button>Anterior</button></a>
+    {{/if}}
+    {{#if hasNextPage}}
+      <a href="/home/?category={{category}}&sort={{currentSort}}&page={{nextPage}}"><button>Siguiente</button></a>
+    {{/if}}
+  </tbody>
+</table>
+  </section>
+
+</div>
+
+
+<script src="/js/cart.js"></script>
+<script src="/js/product.js"></script>
+

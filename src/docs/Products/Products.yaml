@@ -1,0 +1,226 @@
+paths:
+  /api/products:
+    post:
+      summary: Create a new product
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/updateProduct"
+      responses:
+        "200":
+          description: A product object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getProducts"
+        "400":
+          description: Invalid input, object invalid
+    get:
+      summary: Get all products
+      tags:
+        - Products
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Page number
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Number of items per page
+        - in: query
+          name: sort
+          schema:
+            type: string
+          description: Sort by field
+      responses:
+        "200":
+          description: A list of products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/getProducts"
+        "400":
+          description: Invalid input, object invalid
+  /api/products/{pid}:
+    get:
+      summary: Get a product by id
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: pid
+          schema:
+            type: String
+          required: true
+          description: Product id
+      responses:
+        "200":
+          description: A product object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getProducts"
+        "400":
+          description: Invalid input, object invalid
+    put:
+      sumary: Update a product by id
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: pid
+          schema:
+            type: String
+          required: true
+          description: Product id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/updateProduct"
+      responses:
+        "200":
+          description: A product object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/updateProducts"
+        "400":
+          description: Invalid input, object invalid
+    delete:
+      summary: Delete a product by id
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: pid
+          schema:
+            type: String
+          required: true
+          description: Product id
+      responses:
+        "200":
+          description: A product object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/deleteProducts"
+        "400":
+          description: Invalid input, object invalid
+
+# Components:
+
+components:
+  schemas:
+    getProducts:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Auto generated mongo id
+        title:
+          type: string
+          description: Product title
+        description:
+          type: string
+          description: Product description
+        price:
+          type: number
+          description: Product price
+        thumbnail:
+          type: string
+          description: Product thumbnail
+        code:
+          type: string
+          description: Product code
+        stock:
+          type: number
+          description: Product stock
+        status:
+          type: string
+          description: Product status
+        category:
+          type: string
+          description: Product category
+        owner:
+          type: string
+          description: Product owner / Default - admin
+      example:
+        _id: 5f9d4b3b9d9b4b1b3c9d9b4b
+        title: "Product title"
+        description: "Product description"
+        price: 100
+        thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/bus-vehicle-transport-school-128.png"
+        code: "1234"
+        stock: 10
+        status: "active"
+        category: "category"
+        owner: "admin"
+
+    updateProducts:
+      type: object
+      example:
+        status: success
+        message: "Product updated"
+        payload:
+          acknowledged: true
+          modifiedCount: 1
+          upsertedId: null
+          upsertedCount: 0
+          matchedCount: 1
+
+    deleteProducts:
+      type: object
+      example:
+        status: success
+        message: "Product deleted"
+        payload:
+          acknowledged: true
+          deletedCount: 1
+  requestBodies:
+    updateProduct:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Product title
+        description:
+          type: string
+          description: Product description
+        price:
+          type: number
+          description: Product price
+        thumbnail:
+          type: string
+          description: Product thumbnail
+        code:
+          type: string
+          description: Product code
+        stock:
+          type: number
+          description: Product stock
+        status:
+          type: string
+          description: Product status
+        category:
+          type: string
+          description: Product category
+      example:
+        title: "Product title"
+        description: "Product description"
+        price: 100
+        thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/bus-vehicle-transport-school-128.png"
+        code: "1234"
+        stock: 10
+        status: "active"
+        category: "category"

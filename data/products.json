@@ -1,0 +1,18 @@
+[
+	{
+		"title": "Fideos",
+		"description": "Pastas",
+		"category": "Pastas",
+		"price": "200",
+		"stock": "200",
+		"id": 1
+	},
+	{
+		"title": "Ñoquis",
+		"description": "Ñoquis",
+		"category": "Pastas",
+		"price": "400",
+		"stock": "200",
+		"id": 2
+	}
+]

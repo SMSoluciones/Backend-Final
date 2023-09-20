@@ -1,0 +1,56 @@
+<button>
+  <a href="/home">Home</a>
+</button>
+<button id="btnVaciarCarrito" type="submit">
+  Vaciar Carrito
+</button>
+<button id="btnCarrito" type="submit">
+  <span id="idContadorCarrito">Ir al carrito</span>
+</button>
+
+{{user.first_name}}
+{{user.last_name}}
+{{user.email}}
+
+<section>
+  <div>
+    <div>
+      <p>CODE: {{product.code}}</p>
+      <br />
+      <p>Producto: {{product.title}}</p>
+      <br />
+      <h5>{{product.description}}</h5>
+      <br />
+      <p>Stock: {{product.stock}}</p>
+      <br />
+      <p>$ {{product.price}}</p>
+    </div>
+
+    <div>
+      <button>
+        <a onclick="sumar({{product.stock}})">
+          +
+        </a>
+      </button>
+      <span id="idContadorProducto">0</span>
+      <button>
+        <a onclick="restar()">
+          -
+        </a>
+      </button>
+    </div>
+
+    <div>
+      <button onclick="agregarProducto('{{product._id}}')">Agregar al Carrito</button>
+    </div>
+
+    <a href="/home">
+      <button>Volver a la Tienda</button>
+    </a>
+  </div>
+</section>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="/js/product.js"></script>
+<script src="/js/cart.js"></script>

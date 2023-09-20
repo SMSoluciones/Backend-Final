@@ -1,0 +1,73 @@
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"649346bcbfe1a2b704318cf72\" (type string) at path \"_id\" for model \"products\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"649346bcbfe1a2b704318cf72\"","value":"649346bcbfe1a2b704318cf72","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"r\" (type string) at path \"_id\" for model \"products\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"r\"","value":"r","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"r\" (type string) at path \"_id\" for model \"products\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"r\"","value":"r","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"r\" (type string) at path \"_id\" for model \"products\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"r\"","value":"r","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"r\" (type string) at path \"_id\" for model \"products\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"r\"","value":"r","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"ruta_thumbnail_5\" (type string) at path \"_id\" for model \"products\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"ruta_thumbnail_5\"","value":"ruta_thumbnail_5","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-19T23:45:36.780Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-19T23:45:36.780Z',\n  age: 33\n}\"","value":{"age":33,"email":"sosofrezze@gmail.com","first_name":"Sofia","id":"650a23231d67c188397d55b4","last_connection":"2023-09-19T23:45:36.780Z","last_name":"Frezze","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-19T23:45:36.780Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T00:03:42.370Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T00:03:42.370Z',\n  age: 33\n}\"","value":{"age":33,"email":"sosofrezze@gmail.com","first_name":"Sofia","id":"650a23231d67c188397d55b4","last_connection":"2023-09-20T00:03:42.370Z","last_name":"Frezze","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T00:03:42.370Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\"","value":{"age":33,"email":"sosofrezze@gmail.com","first_name":"Sofia","id":"650a23231d67c188397d55b4","last_connection":"2023-09-20T01:10:59.706Z","last_name":"Frezze","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"level":"error"}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\"","value":{"age":33,"email":"sosofrezze@gmail.com","first_name":"Sofia","id":"650a23231d67c188397d55b4","last_connection":"2023-09-20T01:10:59.706Z","last_name":"Frezze","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\"","value":{"age":33,"email":"sosofrezze@gmail.com","first_name":"Sofia","id":"650a23231d67c188397d55b4","last_connection":"2023-09-20T01:10:59.706Z","last_name":"Frezze","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '650a23231d67c188397d55b4',\n  email: 'sosofrezze@gmail.com',\n  role: 'USER',\n  first_name: 'Sofia',\n  last_name: 'Frezze',\n  last_connection: '2023-09-20T01:10:59.706Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:45:47.672Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:45:47.672Z',\n  age: 33\n}\"","value":{"age":33,"email":"smunoz.id@gmail.com","first_name":"Sebastian","id":"6508ed3c7030c5504cd50479","last_connection":"2023-09-20T01:45:47.672Z","last_name":"Muñoz","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:45:47.672Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"level":"error","message":"[controllers/cartsController.js] /updateTicketPurchase this.deleteCartProduct is not a function"}
+{"level":"error","message":"[controllers/cartsController.js] /updateTicketPurchase ticketManager.updateTicket is not a function"}
+{"level":"error","message":"[controllers/cartsController.js] /updateTicketPurchase tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:53:12.629Z',\n  age: 33\n}\" (type Object) at path \"purchaser\""}
+{"level":"error","message":"[controllers/cartsController.js] /updateTicketPurchase Error updating ticket purchase"}
+{"level":"error","message":"[controllers/cartsController.js] /updateTicketPurchase tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:53:12.629Z',\n  age: 33\n}\" (type Object) at path \"purchaser\""}
+{"_message":"tickets validation failed","errors":{"purchaser":{"kind":"string","message":"Cast to string failed for value \"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:53:12.629Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"CastError","path":"purchaser","reason":null,"stringValue":"\"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:53:12.629Z',\n  age: 33\n}\"","value":{"age":33,"email":"smunoz.id@gmail.com","first_name":"Sebastian","id":"6508ed3c7030c5504cd50479","last_connection":"2023-09-20T01:53:12.629Z","last_name":"Muñoz","role":"USER"},"valueType":"Object"}},"level":"error","message":"tickets validation failed: purchaser: Cast to string failed for value \"{\n  id: '6508ed3c7030c5504cd50479',\n  email: 'smunoz.id@gmail.com',\n  role: 'USER',\n  first_name: 'Sebastian',\n  last_name: 'Muñoz',\n  last_connection: '2023-09-20T01:53:12.629Z',\n  age: 33\n}\" (type Object) at path \"purchaser\"","name":"ValidationError"}
+{"level":"error","message":"[controllers/cartsController.js] /updateTicketPurchase this.deleteCartProduct is not a function"}
+{"code":"EENVELOPE","command":"API","level":"error"}
+{"code":"EENVELOPE","command":"API","level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error","message":"resetEmailService is not defined"}
+{"level":"error","message":"resetEmailService is not defined"}
+{"level":"error","message":"resetEmailService is not defined"}
+{"level":"error","message":"resetEmailService is not defined"}
+{"level":"error","message":"resetEmailService is not defined"}
