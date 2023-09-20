@@ -83,7 +83,7 @@ export default class ViewsRouter extends Router {
       realtimeproductsView
     );
 
-    this.get("/admin", PRIVATE_ACCESS, passportStrategiesEnum.JWT, usersView);
+    this.get("/admin", ADMIN_ACCESS, passportStrategiesEnum.JWT, usersView);
 
     // Chat
     this.get("/chat", PRIVATE_ACCESS, passportStrategiesEnum.JWT, chatRender);

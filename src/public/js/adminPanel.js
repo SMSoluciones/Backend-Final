@@ -61,3 +61,31 @@ async function borrarUsuario(uid) {
     borrarUsuario.disabled = false;
   }
 }
+
+async function borrarUsuarios() {
+  borrarUsuarios.disabled = true;
+  try {
+    const result = await fetch(`/api/users/`, {
+      method: "DELETE",
+    });
+    if (result.status === 200) {
+      Swal.fire({
+        title: "Usuarios Eliminados correctamente",
+        icon: "success",
+        text: "Atencion",
+      }).then(() => {
+        window.location.replace("/admin");
+      });
+    } else {
+      throw new Error();
+    }
+  } catch (error) {
+    Swal.fire({
+      title: "Error Eliminado Usuario",
+      icon: "warning",
+      text: "Atencion",
+    });
+  } finally {
+    borrarUsuarios.disabled = false;
+  }
+}

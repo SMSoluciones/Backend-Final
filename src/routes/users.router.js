@@ -18,7 +18,6 @@ import {
 import {
   PUBLIC_ACCESS,
   PRIVATE_ACCESS,
-  PREMIUM_ACCESS,
   ADMIN_ACCESS,
 } from "../config/access.js";
 
@@ -109,14 +108,9 @@ export default class UsersRouter extends Router {
       updateUserDocument
     );
 
-    this.delete("/", PRIVATE_ACCESS, passportStrategiesEnum.JWT, deleteUsers);
+    this.delete("/", ADMIN_ACCESS, passportStrategiesEnum.JWT, deleteUsers);
 
-    this.delete(
-      "/:uid",
-      PRIVATE_ACCESS,
-      passportStrategiesEnum.JWT,
-      deleteUser
-    );
+    this.delete("/:uid", ADMIN_ACCESS, passportStrategiesEnum.JWT, deleteUser);
   }
 }
 
