@@ -39,8 +39,9 @@ const productsRouter = new ProductsRouter();
 const cartsRouter = new CartsRouter();
 const messageRouter = new MessageRouter();
 
-const PORT = "0.0.0.0";
 const app = express();
+
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -75,7 +76,7 @@ const specs = swaggerJsDoc(swaggerOptions);
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 // Server
-const httpServer = app.listen(PORT, () => {
+const httpServer = app.listen(PORT, "0.0.0.0", function () {
   getLogger().info(`Server running on port http://localhost:${PORT}`);
 });
 
